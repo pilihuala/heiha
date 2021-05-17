@@ -65,30 +65,7 @@ function startHeartAnimation() {
 		}
 	},
 	c)
-} (function(a) {
-	a.fn.typewriter = function() {
-		this.each(function() {
-			var d = a(this),
-			c = d.html(),
-			b = 0;
-			d.html("");
-			var e = setInterval(function() {
-				var f = c.substr(b, 1);
-				if (f == "<") {
-					b = c.indexOf(">", b) + 1
-				} else {
-					b++
-				}
-				d.html(c.substring(0, b) + (b & 1 ? "_": ""));
-				if (b >= c.length) {
-					clearInterval(e)
-				}
-			},
-			75)
-		});
-		return this
-	}
-})(jQuery);
+}  
 function timeElapse(c) {
 	var e = Date();
 	var f = (Date.parse(e) - Date.parse(c)) / 1000;
@@ -107,7 +84,7 @@ function timeElapse(c) {
 	if (f < 10) {
 		f = "0" + f
 	}
-	var a = '<span class="digit">' + g + '</span> days <span class="digit">' + b + '</span> hours <span class="digit">' + d + '</span> minutes <span class="digit">' + f + "</span> seconds";
+	var a = '<span class="digit">' + g + '</span> 天 <span class="digit">' + b + '</span> 时 <span class="digit">' + d + '</span> 分 <span class="digit">' + f + "</span> 秒";
 	$("#elapseClock").html(a)
 }
 function showMessages() {
@@ -119,11 +96,10 @@ function showMessages() {
 function adjustWordsPosition() {
 	$("#words").css("position", "absolute");
 	$("#words").css("top", $("#garden").position().top + 195);
-	$("#words").css("left", $("#garden").position().left + 70)
+	$("#words").css("left", $("#garden").position().left + 70);
+	
 }
-function adjustCodePosition() {
-	$("#code").css("margin-top", ($("#garden").height() - $("#code").height()) / 2)
-}
+ 
 function showLoveU() {
 	$("#loveu").fadeIn(3000)
 };
