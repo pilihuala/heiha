@@ -13,11 +13,6 @@ $(function() {
 	gardenCanvas = $garden[0];
 	gardenCanvas.width = $("#loveHeart").width();
 	gardenCanvas.height = $("#loveHeart").height();
-
-	console.log("client_w:"+clientWidth+";client_h:"+clientHeight);
-
-	console.log("w:"+gardenCanvas.width+";h:"+gardenCanvas.height);
-
 	gardenCtx = gardenCanvas.getContext("2d");
 	gardenCtx.globalCompositeOperation = "lighter";
 	garden = new Garden(gardenCtx, gardenCanvas);
@@ -49,7 +44,6 @@ function startHeartAnimation() {
 	var b = new Array();
 	var a = setInterval(function() {
 		var h = getHeartPoint(d);
-		console.log("x:"+h[0]+";y:"+h[1]);
 		var e = true;
 		for (var f = 0; f < b.length; f++) {
 			var g = b[f];
